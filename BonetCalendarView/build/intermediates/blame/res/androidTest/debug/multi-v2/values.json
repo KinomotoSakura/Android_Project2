@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\lixia\\AndroidStudioProjects\\MyDiary\\BonetCalendarView\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\lixia\\AndroidStudioProjects\\MyDiary\\BonetCalendarView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,24,27,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,146,185,230,271,314,350,396,436,494,550,593,646,701,754,1045,1205,1493",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,23,26,31,36",
+                        "endColumns": "50,39,38,44,40,42,35,45,39,57,55,42,52,54,52,12,12,12,12",
+                        "endOffsets": "101,141,180,225,266,309,345,391,431,489,545,588,641,696,749,1040,1200,1488,1772"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">My Diary</string>
+    <string name="title">日记</string>
+    <string name="welcome">欢迎</string>
+    <string name="add">新建</string>
+    <string name="back">返回</string>
+    <string name="search">搜索</string>
+    <string name="list">列表</string>
+    <string name="calendar">日历</string>
+    <string name="setting">设置</string>
+    <string name="help">帮助</string>
+    <string name="search_hint">请输入关键字</string>
+    <string name="feedback">意见反馈</string>
+    <string name="share">分享</string>
+    <string name="about">关于</string>
+    <string name="exit">退出程序</string>
+    <string name="account_setting">帐号管理</string>
+    <string name="login">登录</string>
+    <string name="logout">退出登录</string>
+    <string name="register">注册</string>
+    <string name="user">邮箱</string>
+    <string name="password">密码</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="reset_password">重置密码</string>
+    <string name="verification">验证</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="activity_edit_hint">内容</string>
+    <string name="activity_feedback_menu_send">提交</string>
+</resources>
