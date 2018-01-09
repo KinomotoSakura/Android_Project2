@@ -8,10 +8,13 @@ import android.view.WindowManager;
 
 import com.example.lixiang.mydiary.R;
 import com.example.lixiang.mydiary.model.User;
+import com.example.lixiang.mydiary.utils.ThemeUtils;
 
 public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -26,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
             try{
 
-                Thread.sleep(5000);
+                Thread.sleep(50);
 
             }catch (InterruptedException e){
                 e.printStackTrace();

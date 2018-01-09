@@ -1,5 +1,6 @@
 package com.example.lixiang.mydiary.activity;
 
+import android.app.Activity;
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -34,6 +35,7 @@ import com.example.lixiang.mydiary.model.User;
 import com.example.lixiang.mydiary.model.Document;
 import com.example.lixiang.mydiary.model.Diary;
 import com.example.lixiang.mydiary.MyApplication;
+import com.example.lixiang.mydiary.utils.ThemeUtils;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -52,13 +54,17 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
     private Controller mController;
     private ActionBarDrawerToggle mDrawerToggle;
     static private boolean mIsOpened = false;
+    public static Activity instance = null;
     private String week [] = {"星期日","星期一","星期二","星期三","星期四","星期五","星期六"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        instance = this;
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         loadData();
@@ -71,10 +77,18 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
         AVAnalytics.trackAppOpened(getIntent());
     }
 
+    public void init(){
+        onCreate(null);
+    }
+
     protected void loadData(){
         mDocument = MyApplication.getDoc();
         Intent intent = getIntent();
-        String str = intent.getStringExtra("from");
+        String str = "OtherActivity";
+        // This check is very important in avoiding system crashing;
+        if(intent.getStringExtra("from") != null){
+            str = intent.getStringExtra("from");
+        }
         if (str.equals("LoginActivity")){
             mDocument.deleteFile();
             mDocument.load(this);

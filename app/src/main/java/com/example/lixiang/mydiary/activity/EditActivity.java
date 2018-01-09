@@ -11,11 +11,14 @@ import android.widget.Toast;
 
 import com.example.lixiang.mydiary.MyApplication;
 import com.example.lixiang.mydiary.R;
+import com.example.lixiang.mydiary.utils.ThemeUtils;
 
 public class EditActivity extends AppCompatActivity {
     private EditText mEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 

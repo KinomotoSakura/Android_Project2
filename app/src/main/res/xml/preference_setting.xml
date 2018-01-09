@@ -12,5 +12,10 @@
             android:title="加密密码"
             android:summary="对日记内容进行加密"
             android:layout="@layout/preference_item"/>
+        <Preference
+            android:key="theme"
+            android:title="切换主题"
+            android:summary="对使用的主题进行修改"
+            android:layout="@layout/preference_item"/>
     </PreferenceCategory>
 </PreferenceScreen>

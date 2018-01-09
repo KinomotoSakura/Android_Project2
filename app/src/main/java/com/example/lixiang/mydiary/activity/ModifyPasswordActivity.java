@@ -18,6 +18,7 @@ import com.avos.avoscloud.FindCallback;
 import com.avos.avoscloud.RequestPasswordResetCallback;
 import com.example.lixiang.mydiary.R;
 import com.example.lixiang.mydiary.model.User;
+import com.example.lixiang.mydiary.utils.ThemeUtils;
 
 import java.util.List;
 
@@ -27,6 +28,8 @@ public class ModifyPasswordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify_password);
 

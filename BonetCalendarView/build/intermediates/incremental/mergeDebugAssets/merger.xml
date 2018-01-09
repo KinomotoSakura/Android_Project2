@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\APP\Android_Project2-master\BonetCalendarView\src\main\assets"/><source path="D:\APP\Android_Project2-master\BonetCalendarView\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\APP\Android_Project2-master\BonetCalendarView\build-types\debug\assets"/></dataSet></merger>

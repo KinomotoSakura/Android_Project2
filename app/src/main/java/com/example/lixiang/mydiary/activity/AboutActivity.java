@@ -13,11 +13,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.lixiang.mydiary.R;
+import com.example.lixiang.mydiary.utils.ThemeUtils;
 
 public class AboutActivity extends AppCompatActivity {
     private AboutFragment mAboutFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 

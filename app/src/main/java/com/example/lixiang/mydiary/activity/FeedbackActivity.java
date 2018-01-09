@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.avos.avoscloud.AVObject;
 import com.example.lixiang.mydiary.R;
+import com.example.lixiang.mydiary.utils.ThemeUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -20,6 +21,8 @@ public class FeedbackActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
 
