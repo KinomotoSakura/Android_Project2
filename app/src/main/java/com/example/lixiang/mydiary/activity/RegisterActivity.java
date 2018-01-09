@@ -28,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        setTitle("注册新账号");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -52,6 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                             intent.putExtra("from","RegisterActivity");
                             startActivity(intent);
+                            Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
                             finish();
                         }else{
                             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();

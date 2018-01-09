@@ -44,6 +44,10 @@
         "source": "C:\\Users\\lixia\\AndroidStudioProjects\\MyDiary\\BonetCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_right_arrow.png"
     },
     {
+        "merged": "C:\\Users\\lixia\\AndroidStudioProjects\\MyDiary\\BonetCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_example_appwidget_preview.png.flat",
+        "source": "C:\\Users\\lixia\\AndroidStudioProjects\\MyDiary\\BonetCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable\\example_appwidget_preview.png"
+    },
+    {
         "merged": "C:\\Users\\lixia\\AndroidStudioProjects\\MyDiary\\BonetCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_ic_left_arrow_selected.png.flat",
         "source": "C:\\Users\\lixia\\AndroidStudioProjects\\MyDiary\\BonetCalendarView\\build\\intermediates\\bundles\\debug\\res\\drawable\\ic_left_arrow_selected.png"
     },

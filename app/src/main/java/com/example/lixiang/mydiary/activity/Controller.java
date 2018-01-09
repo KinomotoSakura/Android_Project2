@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.avos.avoscloud.AVUser;
 import com.example.lixiang.mydiary.MyApplication;
@@ -22,6 +23,7 @@ public class Controller {
     private LinearLayout mLlyAbout;
     private LinearLayout mLlyLogout;
     private LinearLayout mLlyExit;
+    private TextView user_name;
 
     Controller(Context context){
         this.context = context;
@@ -128,10 +130,12 @@ public class Controller {
                 return true;
             }
         });
+
+        user_name = (TextView)mActivity.findViewById(R.id.tv_user_name);
+        user_name.setText(User.getUserName());
     }
 
     public void isLogin(){
-
         if(User.isLogin()){
             mLlyLogout.setVisibility(View.VISIBLE);
         }else{

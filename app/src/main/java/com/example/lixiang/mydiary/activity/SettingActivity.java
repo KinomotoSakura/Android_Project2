@@ -35,9 +35,9 @@ public class SettingActivity extends AppCompatActivity {
     static public Activity set = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
+        setTitle("设置");
         setContentView(R.layout.activity_setting);
 
         set = this;

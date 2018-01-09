@@ -28,9 +28,9 @@ public class ModifyPasswordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
+        setTitle("重置密码");
         setContentView(R.layout.activity_modify_password);
 
         ActionBar actionBar = getSupportActionBar();
@@ -54,6 +54,7 @@ public class ModifyPasswordActivity extends AppCompatActivity {
                                         // 已发送一份重置密码的指令到用户的邮箱
                                         Intent intent = new Intent(ModifyPasswordActivity.this,LoginActivity.class);
                                         startActivity(intent);
+                                        Toast.makeText(getApplicationContext(),"已发送一份重置密码的指令到用户的邮箱",Toast.LENGTH_SHORT).show();
                                         finish();
                                     } else {
                                         // 重置密码出错。

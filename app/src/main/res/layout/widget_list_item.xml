@@ -51,9 +51,7 @@
         android:orientation="horizontal"
         android:layout_gravity="bottom"
         android:layout_marginBottom="3dp"
-        android:layout_marginLeft="3dp"
-        >
-
+        android:layout_marginLeft="3dp" >
             <TextView
                 android:id="@+id/widget_week"
                 android:layout_width="wrap_content"

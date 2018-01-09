@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.avos.avoscloud.AVAnalytics;
 import com.bonet.views.BtCalendarView;
@@ -103,9 +104,7 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
 
     protected void initDrawerLayout(){
         mController = new Controller(this);
-
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-//		mSetting = (LinearLayout) findViewById(R.id.lly_nav);
         mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,0,0){
             public void onDrawerClosed(View view) {
                 invalidateOptionsMenu(); // creates call to
@@ -137,12 +136,10 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
     }
 
     protected void initCalenderView(){
-
         final CardView cardView = (CardView)mLlyCalender.findViewById(R.id.lly_item);
         final TextView tvDate = (TextView) mLlyCalender.findViewById(R.id.tv_date);
         final TextView tvWeek = (TextView) mLlyCalender.findViewById(R.id.tv_week);
         final TextView tvContent = (TextView) mLlyCalender.findViewById(R.id.tv_content);
-
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,9 +175,7 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
                     tvDate.setText(diary.getDate());
                     tvWeek.setText(diary.getWeek());
                     tvContent.setText(diary.getContent());
-
                 } else {
-
                     cardView.setVisibility(View.INVISIBLE);
                 }
             }
@@ -191,12 +186,10 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
 
         mViewPager = (ViewPager) findViewById(R.id.vp_main);
         LayoutInflater inflater = getLayoutInflater();
-//		mLlyList = inflater.inflate(R.layout.list, null);
         mLlyRecyclerView = inflater.inflate(R.layout.recyclerview,null);
         mLlyCalender = inflater.inflate(R.layout.calendar,null);
 
         mViewList = new ArrayList<View>();
-//		mViewList.add(mLlyList);
         mViewList.add(mLlyRecyclerView);
         mViewList.add(mLlyCalender);
         mViewPager.setAdapter(new MyPagerAdapter( mViewList));
@@ -231,7 +224,6 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
                     String returnedData = data.getStringExtra("data_return");
                     Diary diary = mDocument.getDiaryManager().createDiary(date, week[iWeek-1], returnedData, true);
                     mDocument.getDiaryManager().addDairy(diary);
-//				mDiaryAdapter.notifyDataSetChanged();
                     mRVAdapter.setList(mDocument.getDiaryManager().getList());
                     mRVAdapter.notifyDataSetChanged();
 
@@ -312,7 +304,7 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
     public void succeed() {
         mRVAdapter.setList(MyApplication.getDoc().getDiaryManager().getList());
         mRVAdapter.notifyDataSetChanged();
-//		Toast.makeText(getApplicationContext(),"Load succeed",Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(),"Load succeed",Toast.LENGTH_SHORT).show();
     }
 
     @Override

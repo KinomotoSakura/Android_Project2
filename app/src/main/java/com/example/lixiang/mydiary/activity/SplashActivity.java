@@ -13,7 +13,6 @@ import com.example.lixiang.mydiary.utils.ThemeUtils;
 public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
@@ -28,9 +27,7 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             try{
-
-                Thread.sleep(50);
-
+                Thread.sleep(100);
             }catch (InterruptedException e){
                 e.printStackTrace();
             }
@@ -39,12 +36,9 @@ public class SplashActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void aVoid) {
-//            SharedPreferences preference_setting = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             if (!User.isLogin()){
-
                 Intent intent = new Intent(SplashActivity.this,LoginActivity.class);
                 startActivity(intent);
-
             } else {
 
                 Intent intent = new Intent(SplashActivity.this,MainActivity.class);

@@ -13,6 +13,10 @@ public class User extends AVUser {
 
     public static final Creator CREATOR = AVObjectCreator.instance;
 
+    public static String getUserName() {
+        return AVUser.getCurrentUser().getUsername();
+    }
+
     public static boolean isLogin(){
         return AVUser.getCurrentUser() != null;
     }

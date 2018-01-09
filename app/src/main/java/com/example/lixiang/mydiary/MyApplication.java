@@ -24,7 +24,7 @@ public class MyApplication extends Application{
 
         AVObject.registerSubclass(User.class);
         AVObject.registerSubclass(DiaryLc.class);
-        AVOSCloud.initialize(this, "d8sfcRI2r8wsnakEnSyljGm2-gzGzoHsz", "SmTS3sgmLq9hwlaKEUOWPxCg");
+        AVOSCloud.initialize(this, "nK17LMPhBdxjkxmO8gqe5gRL-gzGzoHsz", "eteDVv9C8TCU8Csd2pHHCEpv");
 
         initDoc();
     }

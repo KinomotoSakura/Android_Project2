@@ -17,7 +17,6 @@ public class EditActivity extends AppCompatActivity {
     private EditText mEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
@@ -35,14 +34,15 @@ public class EditActivity extends AppCompatActivity {
         mEditText.setText(data);
         if (MyApplication.getCurMod() == MyApplication.MOD_EDIT){
             mEditText.setEnabled(true);
+            setTitle("编辑日记");
         }else{
             mEditText.setEnabled(false);
+            setTitle("查看日记");
         }
     }
 
     @Override
     public void onBackPressed() {
-//		prepareData();
         finish();
     }
 

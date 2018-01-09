@@ -42,7 +42,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/tv_weather_city"
+                    android:id="@+id/tv_welcome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -51,7 +51,7 @@
                     android:textColor="@color/white"
                     android:textSize="14sp" />
                 <TextView
-                    android:id="@+id/tv_weather_wind"
+                    android:id="@+id/tv_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -180,13 +180,14 @@
                     android:layout_marginStart="8dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/ic_exit_app"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="24dp"
                     android:gravity="center_vertical"
                     android:text="@string/exit"
-                    android:textColor="?attr/colorAccent" />
+                    android:textColor="@color/colorAccent" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
