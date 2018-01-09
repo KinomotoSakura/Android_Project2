@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
     private RecyclerViewAdapter mRVAdapter;
     private Controller mController;
     private ActionBarDrawerToggle mDrawerToggle;
-    static private boolean mIsOpened = false;
     public static Activity instance = null;
     private String week [] = {"星期日","星期一","星期二","星期三","星期四","星期五","星期六"};
 
@@ -93,12 +92,15 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
         if (str.equals("LoginActivity")){
             mDocument.deleteFile();
             mDocument.load(this);
-        }else{
+        }else if(str.equals("OtherActivity") && intent.getStringExtra("from") != null){
             try{
                 mDocument.readFile();
             }catch (Exception e){
                 e.printStackTrace();
             }
+        }else{
+            mDocument.deleteFile();
+            mDocument.load(this);
         }
     }
 
@@ -183,7 +185,6 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
     }
 
     protected void initViewPager(){
-
         mViewPager = (ViewPager) findViewById(R.id.vp_main);
         LayoutInflater inflater = getLayoutInflater();
         mLlyRecyclerView = inflater.inflate(R.layout.recyclerview,null);

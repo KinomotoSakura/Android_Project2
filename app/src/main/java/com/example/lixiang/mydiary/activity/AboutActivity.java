@@ -19,10 +19,10 @@ public class AboutActivity extends AppCompatActivity {
     private AboutFragment mAboutFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        setTitle("关于");
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);

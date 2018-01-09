@@ -13,8 +13,7 @@
             android:layout="@layout/preference_item"/>
         <Preference
             android:key="star"
-            android:summary="鼓励作者"
-            android:title="给我点赞"
+            android:title="应用特性"
             android:layout="@layout/preference_item"/>
     </PreferenceCategory>
 

@@ -4,18 +4,27 @@
     <PreferenceCategory
         android:title="基本设置">
         <Preference
+            android:key="theme"
+            android:title="切换主题"
+            android:summary="对使用的主题进行修改"
+            android:layout="@layout/preference_item"/>
+        <Preference
+            android:key="widget"
+            android:title="Widget设置"
+            android:summary="是否在Widget上显示日记内容"
+            android:layout="@layout/preference_item"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="账号与安全">
+        <Preference
             android:key="account"
             android:title="帐号管理"
             android:summary="密码修改"
             android:layout="@layout/preference_item"/>
         <Preference
             android:title="加密密码"
-            android:summary="对日记内容进行加密"
-            android:layout="@layout/preference_item"/>
-        <Preference
-            android:key="theme"
-            android:title="切换主题"
-            android:summary="对使用的主题进行修改"
+            android:summary="对日记进行加密"
             android:layout="@layout/preference_item"/>
     </PreferenceCategory>
 </PreferenceScreen>

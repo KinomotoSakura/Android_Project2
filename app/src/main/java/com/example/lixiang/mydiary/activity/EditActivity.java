@@ -6,15 +6,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lixiang.mydiary.MyApplication;
 import com.example.lixiang.mydiary.R;
+import com.example.lixiang.mydiary.model.Diary;
+import com.example.lixiang.mydiary.model.Document;
 import com.example.lixiang.mydiary.utils.ThemeUtils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static android.view.View.GONE;
 
 public class EditActivity extends AppCompatActivity {
     private EditText mEditText;
+    private TextView mDate;
+    private Button mClear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ThemeUtils.onActivityCreateSetTheme(this);
@@ -28,7 +40,21 @@ public class EditActivity extends AppCompatActivity {
         initView();
     }
     protected void initView(){
+        Document mDocument = MyApplication.getDoc();
+        int diaryCnt = mDocument.getDiaryManager().getDiaryCnt();
+        Diary diary = mDocument.getDiaryManager().getDiary(diaryCnt - 1);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        mDate = (TextView) findViewById(R.id.edit_date);
+        mDate.setText("今天 "+ formatter.format(new Date()));
         mEditText = (EditText) findViewById(R.id.edit_text);
+        mClear = (Button) findViewById(R.id.edit_clear);
+        mClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mEditText.setText("");
+            }
+        });
         Intent intent = getIntent();
         String data = intent.getStringExtra("diary_content");
         mEditText.setText(data);
@@ -36,10 +62,13 @@ public class EditActivity extends AppCompatActivity {
             mEditText.setEnabled(true);
             setTitle("编辑日记");
         }else{
-            mEditText.setEnabled(false);
+            mEditText.setKeyListener(null);
             setTitle("查看日记");
+            mClear.setVisibility(GONE);
+            mDate.setText(diary.getDate()+" "+diary.getWeek());
         }
     }
+
 
     @Override
     public void onBackPressed() {
@@ -73,7 +102,7 @@ public class EditActivity extends AppCompatActivity {
     protected void prepareData(){
         String data = mEditText.getText().toString();
         if (data.equals("")){
-            Toast.makeText(EditActivity.this,"No content",Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditActivity.this,"日记为空",Toast.LENGTH_SHORT).show();
             return;
         }
         Intent intent = new Intent();

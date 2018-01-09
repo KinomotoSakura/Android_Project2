@@ -187,7 +187,7 @@
                     android:layout_marginStart="24dp"
                     android:gravity="center_vertical"
                     android:text="@string/exit"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/colorPrimaryDark" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
