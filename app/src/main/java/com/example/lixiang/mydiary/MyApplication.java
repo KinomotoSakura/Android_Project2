@@ -1,6 +1,7 @@
 package com.example.lixiang.mydiary;
 
 import android.app.Application;
+import android.view.Window;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.avos.avoscloud.AVObject;
