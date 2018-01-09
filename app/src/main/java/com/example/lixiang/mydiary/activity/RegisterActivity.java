@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"输入不合法",Toast.LENGTH_SHORT).show();
                     return;
                 }
-                User user = new User();
+                User user = new User();          // add user to server
                 user.setUsername(mUser);
                 user.setPassword(mPwd);
                 user.setEmail(mUser);

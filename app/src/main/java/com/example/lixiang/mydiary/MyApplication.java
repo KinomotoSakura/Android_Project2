@@ -17,13 +17,13 @@ public class MyApplication extends Application{
     public static final  int MOD_VIEW = 1;
     private static int mCurMod = MOD_EDIT;
 
-    @Override
     public void onCreate() {
         super.onCreate();
-
+    
+        //@Override
         AVObject.registerSubclass(User.class);
         AVObject.registerSubclass(DiaryLc.class);
-        AVOSCloud.initialize(this, "d8sfcRI2r8wsnakEnSyljGm2-gzGzoHsz", "SmTS3sgmLq9hwlaKEUOWPxCg");
+        AVOSCloud.initialize(this, "nK17LMPhBdxjkxmO8gqe5gRL-gzGzoHsz", "eteDVv9C8TCU8Csd2pHHCEpv");
 
         initDoc();
     }

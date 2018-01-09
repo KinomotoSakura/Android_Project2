@@ -58,7 +58,7 @@ public class AboutActivity extends AppCompatActivity {
             mShare.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    String subject = "My Diary";
+                    String subject = "Diary";
                     String content = "My Diary真是好";
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");

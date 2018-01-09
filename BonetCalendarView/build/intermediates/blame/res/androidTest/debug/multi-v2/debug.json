@@ -1,6 +1,22 @@
 {
     "logs": [
         {
+            "outputFile": "D:\\Android\\Android_Project2\\BonetCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\Android_Project2\\BonetCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-v11\\values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\lixia\\AndroidStudioProjects\\MyDiary\\BonetCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v11_values-v11.arsc.flat",
             "map": [
                 {
@@ -59,6 +75,53 @@
                         "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,23,26,31,36",
                         "endColumns": "50,39,38,44,40,42,35,45,39,57,55,42,52,54,52,12,12,12,12",
                         "endOffsets": "101,141,180,225,266,309,345,391,431,489,545,588,641,696,749,1040,1200,1488,1772"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Android\\Android_Project2\\BonetCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\Android_Project2\\BonetCalendarView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,24,27,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,146,185,230,271,314,350,396,436,494,550,593,646,701,754,1045,1205,1493",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,23,26,31,36",
+                        "endColumns": "50,39,38,44,40,42,35,45,39,57,55,42,52,54,52,12,12,12,12",
+                        "endOffsets": "101,141,180,225,266,309,345,391,431,489,545,588,641,696,749,1040,1200,1488,1772"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Android\\Android_Project2\\BonetCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\Android_Project2\\BonetCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-v14\\values-v14.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "201"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Android\\Android_Project2\\BonetCalendarView\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Android\\Android_Project2\\BonetCalendarView\\build\\intermediates\\bundles\\debug\\res\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "58",
+                        "endOffsets": "109"
                     }
                 }
             ]
