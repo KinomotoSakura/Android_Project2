@@ -221,6 +221,9 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
                     mRVAdapter.setList(mDocument.getDiaryManager().getList());
                     mRVAdapter.notifyDataSetChanged();
 
+                    //更新widget
+                    Intent toWidget=new Intent("android.appwidget.action.APPWIDGET_UPDATE");
+                    sendBroadcast(toWidget);
                 }
                 break;
             default:
