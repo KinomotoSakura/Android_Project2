@@ -1,35 +1,35 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:2:1-16:12
+ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:2:1-16:12
+INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:2:1-16:12
 	package
-		ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:3:5-48
-		INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml
-		INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml
+		ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:3:5-48
+		INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml
+		INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:5:5-30
-		INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml
-		INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml
+		ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:5:5-30
+		INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml
+		INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:2:11-69
+		ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:4:5-28
-		INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml
-		INJECTED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml
+		ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:4:5-28
+		INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml
+		INJECTED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml
 uses-sdk
-ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:7:5-9:41
+ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
-		ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:9:9-38
+		ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:9:9-38
 	android:minSdkVersion
-		ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:8:9-34
+		ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:8:9-34
 application
-ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:11:5-14:19
+ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:11:5-14:19
 	android:label
-		ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:13:9-41
+		ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:13:9-41
 	android:allowBackup
-		ADDED from C:\Users\lixia\AndroidStudioProjects\MyDiary\BonetCalendarView\AndroidManifest.xml:12:9-35
+		ADDED from D:\Cache\Android\Android_Project\Android_Project2-1\BonetCalendarView\AndroidManifest.xml:12:9-35
