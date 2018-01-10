@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lixiang.mydiary">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -13,22 +13,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-        </activity>
-        <activity android:name=".activity.EditActivity" />
-        <activity android:name=".activity.FeedbackActivity" />
-        <activity android:name=".activity.AboutActivity" />
-        <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.ModifyPasswordActivity" />
-        <activity android:name=".activity.SplashActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".activity.EditActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.FeedbackActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.AboutActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.ModifyPasswordActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver android:name=".widget.CalendarWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -38,10 +56,16 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/calendar_widget_info" />
         </receiver>
-        <service android:name=".widget.CalendarWidgetUpdate"
-            android:permission="android.permission.BIND_REMOTEVIEWS"
-            android:exported="false">
-        </service>
+
+        <service
+            android:name=".widget.CalendarWidgetUpdate"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <activity android:name=".activity.CreateGestureActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activity.GestureLoginActivity"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

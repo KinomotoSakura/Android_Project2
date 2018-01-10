@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import com.avos.avoscloud.AVObject;
 import com.example.lixiang.mydiary.R;
-import com.example.lixiang.mydiary.utils.ThemeUtils;
+import com.example.lixiang.mydiary.util.ThemeUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

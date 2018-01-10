@@ -1,1 +1,2 @@
 include ':app', ':BonetCalendarView'
+include ':app', ':lockpattern'

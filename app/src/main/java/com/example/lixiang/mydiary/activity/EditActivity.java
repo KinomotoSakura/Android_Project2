@@ -16,7 +16,7 @@ import com.example.lixiang.mydiary.MyApplication;
 import com.example.lixiang.mydiary.R;
 import com.example.lixiang.mydiary.model.Diary;
 import com.example.lixiang.mydiary.model.Document;
-import com.example.lixiang.mydiary.utils.ThemeUtils;
+import com.example.lixiang.mydiary.util.ThemeUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

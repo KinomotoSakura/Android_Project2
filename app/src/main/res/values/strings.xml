@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">My Diary</string>
+    <string name="app_name">日迹</string>
+    <string name="app_introduction">每一个独立而丰富的灵魂，都有处可栖</string>
     <string name="title">日记</string>
     <string name="welcome">欢迎</string>
     <string name="add">新建</string>
@@ -29,4 +30,19 @@
     <string name="top">选择置顶</string>
     <string name="no_top">取消置顶</string>
     <string name="clear">clear</string>
+
+    <!-- Gesture login activity -->
+    <string name="gesture_forget_gesture">忘记手势密码</string>
+    <string name="gesture_default">请输入手势密码</string>
+    <string name="gesture_error">手势密码输入错误</string>
+    <string name="gesture_correct">输入正确</string>
+
+    <!-- Create gesture activity -->
+    <string name="create_gesture_activity">CreateGestureActivity</string>
+    <string name="create_gesture_default">绘制解锁图案</string>
+    <string name="create_gesture_correct">再次绘制解锁图案</string>
+    <string name="create_gesture_less_error">至少连接4个点，请重新输入</string>
+    <string name="create_gesture_confirm_error">与上一次绘制不一致，请重新绘制</string>
+    <string name="create_gesture_confirm_correct">设置成功</string>
+    <string name="create_gesture_reset">重新设置</string>
 </resources>

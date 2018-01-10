@@ -31,13 +31,11 @@ import com.bonet.views.OnDateSelectedListener;
 import com.example.lixiang.mydiary.R;
 import com.example.lixiang.mydiary.adapter.MyPagerAdapter;
 import com.example.lixiang.mydiary.adapter.RecyclerViewAdapter;
-import com.example.lixiang.mydiary.adapter.RecyclerArrayAdapter;
 import com.example.lixiang.mydiary.listener.loadDataListener;
-import com.example.lixiang.mydiary.model.User;
 import com.example.lixiang.mydiary.model.Document;
 import com.example.lixiang.mydiary.model.Diary;
 import com.example.lixiang.mydiary.MyApplication;
-import com.example.lixiang.mydiary.utils.ThemeUtils;
+import com.example.lixiang.mydiary.util.ThemeUtils;
 import com.example.lixiang.mydiary.view.PopupDialogFragment;
 
 import java.io.IOException;
@@ -378,7 +376,7 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
     public void succeed() {
         mRVAdapter.setList(MyApplication.getDoc().getDiaryManager().getList());
         mRVAdapter.notifyDataSetChanged();
-		Toast.makeText(getApplicationContext(),"Load succeed",Toast.LENGTH_SHORT).show();
+		//Toast.makeText(getApplicationContext(),"Load succeed",Toast.LENGTH_SHORT).show();
     }
 
     @Override

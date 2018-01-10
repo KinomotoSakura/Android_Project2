@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/BonetCalendarView/BonetCalendarView.iml" filepath="$PROJECT_DIR$/BonetCalendarView/BonetCalendarView.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyDiary.iml" filepath="$PROJECT_DIR$/MyDiary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lockpattern/lockpattern.iml" filepath="$PROJECT_DIR$/lockpattern/lockpattern.iml" />
     </modules>
   </component>
 </project>

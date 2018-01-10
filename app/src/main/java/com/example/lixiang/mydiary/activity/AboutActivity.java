@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.lixiang.mydiary.R;
-import com.example.lixiang.mydiary.utils.ThemeUtils;
+import com.example.lixiang.mydiary.util.ThemeUtils;
 
 public class AboutActivity extends AppCompatActivity {
     private AboutFragment mAboutFragment;

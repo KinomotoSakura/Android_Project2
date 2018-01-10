@@ -23,7 +23,8 @@
             android:summary="密码修改"
             android:layout="@layout/preference_item"/>
         <Preference
-            android:title="加密密码"
+            android:key="gesture"
+            android:title="设置手势密码"
             android:summary="对日记进行加密"
             android:layout="@layout/preference_item"/>
     </PreferenceCategory>

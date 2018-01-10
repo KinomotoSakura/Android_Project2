@@ -18,7 +18,7 @@ import com.avos.avoscloud.FindCallback;
 import com.avos.avoscloud.RequestPasswordResetCallback;
 import com.example.lixiang.mydiary.R;
 import com.example.lixiang.mydiary.model.User;
-import com.example.lixiang.mydiary.utils.ThemeUtils;
+import com.example.lixiang.mydiary.util.ThemeUtils;
 
 import java.util.List;
 

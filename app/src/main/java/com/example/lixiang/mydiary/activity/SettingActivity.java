@@ -12,23 +12,14 @@ import android.preference.PreferenceFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.design.widget.TextInputLayout;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.avos.avoscloud.okhttp.internal.Util;
-import com.example.lixiang.mydiary.MyApplication;
 import com.example.lixiang.mydiary.R;
-import com.example.lixiang.mydiary.utils.ThemeUtils;
-
-import org.w3c.dom.Text;
+import com.example.lixiang.mydiary.util.ThemeUtils;
 
 public class SettingActivity extends AppCompatActivity {
     private SettingFragment mSettingFragment;
@@ -69,6 +60,7 @@ public class SettingActivity extends AppCompatActivity {
     static public class SettingFragment extends PreferenceFragment {
         private Preference mAccount;
         private Preference mTheme;
+        private Preference setGesture;
         private View theme_view = null;
         private LayoutInflater factor = null;
 
@@ -93,6 +85,7 @@ public class SettingActivity extends AppCompatActivity {
 
             mAccount = findPreference("account");
             mTheme = findPreference("theme");
+            setGesture = findPreference("gesture");
             mAccount.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -115,6 +108,16 @@ public class SettingActivity extends AppCompatActivity {
                     return true;
                 }
             });
+            setGesture.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent(getActivity(),CreateGestureActivity.class);
+                    getActivity().startActivity(intent);
+                    getActivity().finish();
+                    return true;
+                }
+            });
+
             setClick();
         }
 

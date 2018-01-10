@@ -1,7 +1,6 @@
-package com.example.lixiang.mydiary.utils;
+package com.example.lixiang.mydiary.util;
 
 import android.app.Activity;
-import android.content.Intent;
 
 import com.example.lixiang.mydiary.R;
 
