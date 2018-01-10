@@ -30,6 +30,7 @@ public class CalendarFactory implements RemoteViewsService.RemoteViewsFactory {
 
     @Override
     public void onCreate() {
+        onDataSetChanged();
     }
 
     //notifyDataChange操作触发
