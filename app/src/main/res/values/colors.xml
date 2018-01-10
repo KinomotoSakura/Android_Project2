@@ -7,4 +7,6 @@
     <color name="material_blue_700">#303f9f</color>
     <color name="view_shadow">#bbbbbb</color>
     <color name="background">#eeeeee</color>
+    <color name="write">#ffffff</color>
+    <color name="common_line_color">#E0E0E0</color>
 </resources>

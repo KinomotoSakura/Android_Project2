@@ -22,16 +22,17 @@
                 android:layout_height="match_parent"/>
 
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/switch_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="20dp"
                 android:layout_marginEnd="20dp"
-                app:backgroundTint="@color/colorPrimaryDark"
-                app:srcCompat="@drawable/ic_right_arrow" />
+                app:backgroundTint="@android:color/holo_orange_dark"
+                app:borderWidth="0dp"
+                app:srcCompat="@drawable/calendar_easyicon" />
         </RelativeLayout>
 
         <include layout="@layout/navigation"/>

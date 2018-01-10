@@ -1,11 +1,13 @@
 package com.example.lixiang.mydiary.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lixiang.mydiary.R;
@@ -15,12 +17,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>  implements Filterable ,View.OnClickListener{
+public class RecyclerViewAdapter extends RecyclerArrayAdapter<Diary, RecyclerViewAdapter.ViewHolder>  implements Filterable ,View.OnClickListener{
     private List<Diary> mItems;
-
-    private  OnRecyclerViewItemClickListener mOnItemClickListener = null;
+    private OnRecyclerViewItemClickListener mOnItemClickListener = null;
+    private ItemOnLongClickListener itemListener;
 
     public RecyclerViewAdapter(List<Diary> list) {
+        super(list);
         mItems = new ArrayList<>();
         mItems.addAll(list);
     }
@@ -28,6 +31,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void setList(List<Diary> list){
         mItems.clear();
         mItems.addAll(list);
+    }
+
+    public void setItemListener(ItemOnLongClickListener listener) {
+        itemListener = listener;
     }
 
     @Override
@@ -38,7 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         Diary item = mItems.get(position);
         if (item == null){
             return;
@@ -47,6 +54,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.mWeek.setText(item.getWeek());
         holder.mContent.setText(item.getContent());
         holder.itemView.setTag(item);
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                itemListener.itemLongClick(getItem(position));
+                return false;
+            }
+        });
+        if (item.getTop() == 1) {
+            holder.mCircle.setImageResource(R.drawable.circle_orange);
+        } else {
+            holder.mCircle.setImageResource(R.drawable.circle);
+        }
     }
 
     @Override
@@ -75,12 +94,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView mDate;
         public TextView mWeek;
         public TextView mContent;
+        public ImageView mCircle;
 
         public ViewHolder(View itemView) {
             super(itemView);
             mDate = (TextView) itemView.findViewById(R.id.tv_date);
             mWeek = (TextView) itemView.findViewById(R.id.tv_week);
             mContent = (TextView) itemView.findViewById(R.id.tv_content);
+            mCircle = (ImageView) itemView.findViewById(R.id.main_iv_circle);
         }
     }
 
@@ -122,5 +143,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public static interface OnRecyclerViewItemClickListener {
         void onItemClick(View view, Diary diary);
+    }
+
+    public static interface ItemOnLongClickListener {
+        void itemLongClick(Diary diary);
     }
 }

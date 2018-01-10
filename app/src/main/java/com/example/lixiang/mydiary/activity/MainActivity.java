@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,18 +31,20 @@ import com.bonet.views.OnDateSelectedListener;
 import com.example.lixiang.mydiary.R;
 import com.example.lixiang.mydiary.adapter.MyPagerAdapter;
 import com.example.lixiang.mydiary.adapter.RecyclerViewAdapter;
-import com.example.lixiang.mydiary.callback.OnLogInCallback;
+import com.example.lixiang.mydiary.adapter.RecyclerArrayAdapter;
 import com.example.lixiang.mydiary.listener.loadDataListener;
 import com.example.lixiang.mydiary.model.User;
 import com.example.lixiang.mydiary.model.Document;
 import com.example.lixiang.mydiary.model.Diary;
 import com.example.lixiang.mydiary.MyApplication;
 import com.example.lixiang.mydiary.utils.ThemeUtils;
+import com.example.lixiang.mydiary.view.PopupDialogFragment;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements loadDataListener {
@@ -54,12 +57,13 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
     private RecyclerViewAdapter mRVAdapter;
     private Controller mController;
     private ActionBarDrawerToggle mDrawerToggle;
+    private ImageButton switch_btn;
+    public static String TOP_STATES = "TOP";
     public static Activity instance = null;
     private String week [] = {"星期日","星期一","星期二","星期三","星期四","星期五","星期六"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         ThemeUtils.onActivityCreateSetTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -133,8 +137,40 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
                 startActivity(intent);
             }
         });
-        recyclerView.setAdapter(mRVAdapter);
+        mRVAdapter.setItemListener(new RecyclerViewAdapter.ItemOnLongClickListener() {
+            @Override
+            public void itemLongClick(final Diary diary) {
+                Bundle bundle = new Bundle();
+                bundle.putInt(TOP_STATES, diary.getTop());
+                PopupDialogFragment popupDialog = new PopupDialogFragment();
+                popupDialog.setArguments(bundle);
+                popupDialog.setItemOnClickListener(new PopupDialogFragment.DialogItemOnClickListener() {
+                    @Override
+                    public void onTop() {
+                        //置顶
+                        diary.setTop(1);
+                        diary.setTime(System.currentTimeMillis());
+                        refreshView();
+                    }
 
+                    @Override
+                    public void onCancel() {
+                        //取消
+                        diary.setTop(0);
+                        diary.setTime(System.currentTimeMillis());
+                        refreshView();
+                    }
+                });
+                popupDialog.show(getFragmentManager(), "popup");
+            }
+        });
+        recyclerView.setAdapter(mRVAdapter);
+    }
+    private void refreshView() {
+        //如果不调用sort方法，是不会进行排序的，也就不会调用compareTo
+        Collections.sort(mDocument.getDiaryManager().getList());
+        mRVAdapter.setList(MyApplication.getDoc().getDiaryManager().getList());
+        mRVAdapter.notifyDataSetChanged();
     }
 
     protected void initCalenderView(){
@@ -195,6 +231,43 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
         mViewList.add(mLlyCalender);
         mViewPager.setAdapter(new MyPagerAdapter( mViewList));
         mViewPager.setCurrentItem(0);
+
+        switch_btn = (ImageButton) findViewById(R.id.switch_button);
+        switch_btn.setTag("0");
+        switch_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (switch_btn.getTag() == "0") {
+                    switch_btn.setImageResource(R.drawable.book_easyicon);
+                    mViewPager.arrowScroll(View.FOCUS_RIGHT);
+                    switch_btn.setTag("1");
+                } else {
+                    switch_btn.setImageResource(R.drawable.calendar_easyicon);
+                    mViewPager.arrowScroll(View.FOCUS_LEFT);
+                    switch_btn.setTag("0");
+                }
+            }
+        });
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageSelected(int arg0) { }
+            @Override
+            public void onPageScrolled(int arg0, float arg1, int arg2) { }
+            @Override
+            public void onPageScrollStateChanged(int arg0) {
+                //arg0 ==1的时表示正在滑动，arg0==2的时表示滑动完毕，arg0==0的时表示什么都没做。
+                if(arg0 == 2){
+                    if (mViewPager.getCurrentItem()==0) {
+                        switch_btn.setTag("0");
+                        switch_btn.setImageResource(R.drawable.calendar_easyicon);
+                    }else{
+                        switch_btn.setTag("1");
+                        switch_btn.setImageResource(R.drawable.book_easyicon);
+                    }
+                }
+            }
+        });
     }
 
     @Override

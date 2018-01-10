@@ -26,5 +26,7 @@
     <string name="confirm_password">确认密码</string>
     <string name="activity_edit_hint">内容</string>
     <string name="activity_feedback_menu_send">提交</string>
+    <string name="top">选择置顶</string>
+    <string name="no_top">取消置顶</string>
     <string name="clear">clear</string>
 </resources>
