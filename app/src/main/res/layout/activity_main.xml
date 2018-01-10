@@ -29,8 +29,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="20dp"
-                android:layout_marginEnd="20dp"
-                app:backgroundTint="@android:color/holo_orange_dark"
+                android:layout_marginEnd="30dp"
+                app:backgroundTint="@color/colorPrimaryDark"
                 app:borderWidth="0dp"
                 app:srcCompat="@drawable/calendar_easyicon" />
         </RelativeLayout>

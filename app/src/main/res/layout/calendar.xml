@@ -19,59 +19,136 @@
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:background="@drawable/view_shadow">
+
         </com.bonet.views.BtCalendarView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/lly_item"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <RelativeLayout
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/today_128px_easyicon" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="24dp">
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tv_date"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="16dp"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/view_shadow"
-                        android:textSize="12sp"
-                        android:text="date"
-                        android:maxLines="1" />
-
-                    <TextView
-                        android:id="@+id/tv_week"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="16dp"
+                        android:layout_height="20dp">
+
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:text="date"
+                            android:textColor="@color/view_shadow"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_week"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/tv_date"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingLeft="10dp"
+                            android:text="week"
+                            android:textColor="@color/view_shadow"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
                         android:gravity="center_vertical"
-                        android:textColor="@color/view_shadow"
-                        android:textSize="12sp"
-                        android:text="week"
-                        android:layout_toRightOf="@+id/tv_date"
-                        android:maxLines="1" />
-                </RelativeLayout>
+                        android:maxLines="1"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="Hello World!"
+                        android:ellipsize="end"
+                        android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/tv_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:paddingLeft="16dp"
-                    android:gravity="center_vertical"
-                    android:text="Hello World!"
-                    android:textSize="16sp"
-                    android:maxLines="1" />
+                </LinearLayout>
+            </LinearLayout>
 
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/lly_today"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="10dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingStart="20dp"
+                            android:text="Today"
+                            android:textColor="@color/view_shadow"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_today"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:paddingStart="20dp"
+                        android:text="Hello World!"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/pen"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="0dp"
+                    android:src="@drawable/create_128px_easyicon" />
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

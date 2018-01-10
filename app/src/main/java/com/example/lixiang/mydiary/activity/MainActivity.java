@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -176,27 +177,19 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
         final TextView tvDate = (TextView) mLlyCalender.findViewById(R.id.tv_date);
         final TextView tvWeek = (TextView) mLlyCalender.findViewById(R.id.tv_week);
         final TextView tvContent = (TextView) mLlyCalender.findViewById(R.id.tv_content);
-        cardView.setOnClickListener(new View.OnClickListener() {
+        final TextView tvToday = (TextView) mLlyCalender.findViewById(R.id.tv_today);
+        final ImageView pen = (ImageView) mLlyCalender.findViewById(R.id.pen);
+        pen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MyApplication.setCurMod(MyApplication.MOD_VIEW);
-                Intent intent = new Intent(MainActivity.this, EditActivity.class);
-                intent.putExtra("diary_content", tvContent.getText());
-                startActivity(intent);
+                MyApplication.setCurMod(MyApplication.MOD_EDIT);
+                Intent intent = new Intent(MainActivity.this,EditActivity.class);
+                startActivityForResult(intent,MyApplication.MOD_EDIT);
             }
         });
-
-        int diaryCnt = mDocument.getDiaryManager().getDiaryCnt();
-        if(diaryCnt == 0){
-            cardView.setVisibility(View.INVISIBLE);
-        }
-        else {
-            Diary diary = mDocument.getDiaryManager().getDiary(diaryCnt - 1);
-            cardView.setVisibility(View.VISIBLE);
-            tvDate.setText(diary.getDate());
-            tvWeek.setText(diary.getWeek());
-            tvContent.setText(diary.getContent());
-        }
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        tvToday.setText(formatter.format(new Date()));
+        tvContent.setText("选个日期吧 <(￣︶￣)>");
 
         BtCalendarView bc = (BtCalendarView) mLlyCalender.findViewById(R.id.calendar);
         bc.initializeAsGrid();
@@ -204,15 +197,21 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
             @Override
             public void onDateSelected(int year, int month, int day) {
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                String date = formatter.format(new Date(year - 1900, month, day));
+                Date d = new Date(year - 1900, month, day);
+                String date = formatter.format(d);
+                tvDate.setText(date);
+
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(d);
+                int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
+                if (w < 0) w = 0;
+                tvWeek.setText(week[w]);
+
                 Diary diary = mDocument.getDiaryManager().getDiary(date);
                 if (diary != null) {
-                    cardView.setVisibility(View.VISIBLE);
-                    tvDate.setText(diary.getDate());
-                    tvWeek.setText(diary.getWeek());
-                    tvContent.setText(diary.getContent());
+                    tvContent.setText("这天，你的置顶日记为--"+diary.getContent());
                 } else {
-                    cardView.setVisibility(View.INVISIBLE);
+                    tvContent.setText("这天很懒，没有留下日记╮(╯▽╰)╭");
                 }
             }
         });

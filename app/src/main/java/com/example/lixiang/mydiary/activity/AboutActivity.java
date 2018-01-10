@@ -3,11 +3,14 @@ package com.example.lixiang.mydiary.activity;
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -51,6 +54,12 @@ public class AboutActivity extends AppCompatActivity {
 
     static public class AboutFragment extends PreferenceFragment {
         private Preference mShare;
+        private Preference star;
+        private Preference weibo;
+        private Preference github;
+        private Preference lockpattern;
+        private Preference calendar;
+        private Preference author;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -61,17 +70,96 @@ public class AboutActivity extends AppCompatActivity {
             mShare.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    String subject = "Diary";
-                    String content = "My Diary真是好";
-                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                    shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, content);
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-                    getActivity().startActivity(Intent.createChooser(shareIntent, "分享到"));
+                    Intent intent = new Intent();
+                    intent.setAction("android.intent.action.VIEW");
+                    Uri content_url = Uri.parse("https://github.com/KinomotoSakura/Android_Project2");
+                    intent.setData(content_url);
+                    startActivity(intent);
                     return true;
                 }
             });
-
+            star = findPreference("star");
+            star.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    final AlertDialog.Builder normalDialog = new AlertDialog.Builder(getActivity());
+                    normalDialog.setTitle("应用简介");
+                    normalDialog.setMessage("我们期待\n你用文字记录内心的每一次触动\n" +
+                            "每一段回忆都有它的价值和意义\n所以 不要刻意去粉饰或抹去它\n" +
+                            "年轻人 且行且歌吧\n你的每一个脚印 都在这里");
+                    normalDialog.setNegativeButton("Back",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) { }
+                            });
+                    normalDialog.show();
+                    return true;
+                }
+            });
+            weibo = findPreference("weibo");
+            weibo.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent();
+                    intent.setAction("android.intent.action.VIEW");
+                    Uri content_url = Uri.parse("https://weibo.com/kakery");
+                    intent.setData(content_url);
+                    startActivity(intent);
+                    return true;
+                }
+            });
+            github = findPreference("github");
+            github.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent();
+                    intent.setAction("android.intent.action.VIEW");
+                    Uri content_url = Uri.parse("https://github.com/KinomotoSakura");
+                    intent.setData(content_url);
+                    startActivity(intent);
+                    return true;
+                }
+            });
+            lockpattern = findPreference("lockpattern");
+            lockpattern.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent();
+                    intent.setAction("android.intent.action.VIEW");
+                    Uri content_url = Uri.parse("https://github.com/sym900728/LockPattern");
+                    intent.setData(content_url);
+                    startActivity(intent);
+                    return true;
+                }
+            });
+            calendar = findPreference("calendar");
+            calendar.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent();
+                    intent.setAction("android.intent.action.VIEW");
+                    Uri content_url = Uri.parse("https://github.com/ebonet/BonetCalendarView");
+                    intent.setData(content_url);
+                    startActivity(intent);
+                    return true;
+                }
+            });
+            author = findPreference("author");
+            author.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    final AlertDialog.Builder normalDialog = new AlertDialog.Builder(getActivity());
+                    normalDialog.setTitle("关于作者");
+                    normalDialog.setMessage("本App为中山大学数据科学与计算机学院15级MAD课程期末项目，由小组合作完成。\n组长：李翔。");
+                    normalDialog.setNegativeButton("Back",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) { }
+                            });
+                    normalDialog.show();
+                    return true;
+                }
+            });
         }
     }
 }

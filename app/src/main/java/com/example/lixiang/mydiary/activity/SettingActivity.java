@@ -7,8 +7,10 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -17,9 +19,13 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.lixiang.mydiary.R;
 import com.example.lixiang.mydiary.util.ThemeUtils;
+import com.example.lixiang.mydiary.util.cache.ACache;
+import com.example.lixiang.mydiary.util.constant.Constant;
+import com.example.lixiang.mydiary.widget.CalendarWidgetUpdate;
 
 public class SettingActivity extends AppCompatActivity {
     private SettingFragment mSettingFragment;
@@ -61,6 +67,8 @@ public class SettingActivity extends AppCompatActivity {
         private Preference mAccount;
         private Preference mTheme;
         private Preference setGesture;
+        private Preference noGesture;
+        private CheckBoxPreference mWidget;
         private View theme_view = null;
         private LayoutInflater factor = null;
 
@@ -83,9 +91,27 @@ public class SettingActivity extends AppCompatActivity {
 
             activity = getActivity();
 
+
             mAccount = findPreference("account");
             mTheme = findPreference("theme");
             setGesture = findPreference("gesture");
+            mWidget = (CheckBoxPreference)findPreference("widget");
+
+            mWidget.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference arg0, Object newValue) {
+                    if ((Boolean)newValue) {
+                        Intent toWidget = new Intent("android.appwidget.action.APPWIDGET_UPDATE");
+                        toWidget.putExtra("Action",1);//显示日记
+                        activity.sendBroadcast(toWidget);
+                    } else {
+                        Intent toWidget = new Intent("android.appwidget.action.APPWIDGET_UPDATE");
+                        toWidget.putExtra("Action",0);//显示日记
+                        activity.sendBroadcast(toWidget);
+                    }
+                    return true;
+                }
+            });
             mAccount.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -117,7 +143,16 @@ public class SettingActivity extends AppCompatActivity {
                     return true;
                 }
             });
-
+            noGesture = findPreference("no_gesture");
+            noGesture.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    ACache aCache = ACache.get(getActivity());
+                    aCache.clear();
+                    Toast.makeText(getActivity(),"手势密码已取消",Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            });
             setClick();
         }
 

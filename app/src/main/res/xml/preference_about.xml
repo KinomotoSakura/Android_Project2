@@ -9,16 +9,21 @@
             android:layout="@layout/preference_item"/>
         <Preference
             android:key="share"
-            android:title="分享"
+            android:title="项目源码"
+            android:summary="github.com/KinomotoSakura/Android_Project2"
             android:layout="@layout/preference_item"/>
         <Preference
             android:key="star"
-            android:title="应用特性"
+            android:title="应用简介"
             android:layout="@layout/preference_item"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="关于作者">
+        <Preference
+            android:key="author"
+            android:title="关于作者"
+            android:layout="@layout/preference_item" />
         <Preference
             android:key="qq"
             android:summary="1796068983"
@@ -26,13 +31,27 @@
             android:layout="@layout/preference_item" />
         <Preference
             android:key="weibo"
-            android:summary="https://weibo.com/kakery"
+            android:summary="@谁猫"
             android:title="微博"
             android:layout="@layout/preference_item" />
         <Preference
             android:key="github"
-            android:summary="https://github.com/KinomotoSakura"
+            android:summary="KinomotoSakura"
             android:title="Github"
+            android:layout="@layout/preference_item" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="开源框架">
+        <Preference
+            android:key="lockpattern"
+            android:summary="github.com/sym900728/LockPattern"
+            android:title="LockPattern"
+            android:layout="@layout/preference_item" />
+        <Preference
+            android:key="calendar"
+            android:summary="github.com/ebonet/BonetCalendarView"
+            android:title="BonetCalendarView"
             android:layout="@layout/preference_item" />
     </PreferenceCategory>
 </PreferenceScreen>

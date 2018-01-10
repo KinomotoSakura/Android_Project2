@@ -31,6 +31,7 @@
     <string name="no_top">取消置顶</string>
     <string name="clear">clear</string>
 
+
     <!-- Gesture login activity -->
     <string name="gesture_forget_gesture">忘记手势密码</string>
     <string name="gesture_default">请输入手势密码</string>

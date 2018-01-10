@@ -8,10 +8,10 @@
             android:title="切换主题"
             android:summary="对使用的主题进行修改"
             android:layout="@layout/preference_item"/>
-        <Preference
+        <CheckBoxPreference
             android:key="widget"
             android:title="Widget设置"
-            android:summary="是否在Widget上显示日记内容"
+            android:summary="取消在Widget上显示日记内容"
             android:layout="@layout/preference_item"/>
     </PreferenceCategory>
 
@@ -26,6 +26,11 @@
             android:key="gesture"
             android:title="设置手势密码"
             android:summary="对日记进行加密"
+            android:layout="@layout/preference_item"/>
+        <Preference
+            android:key="no_gesture"
+            android:title="取消手势密码"
+            android:summary="取消对日记的加密"
             android:layout="@layout/preference_item"/>
     </PreferenceCategory>
 </PreferenceScreen>
