@@ -230,7 +230,6 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
 
                     //更新widget
                     Intent toWidget=new Intent("android.appwidget.action.APPWIDGET_UPDATE");
-//                    toWidget.putExtra("Action",0);
                     sendBroadcast(toWidget);
                 }
                 break;

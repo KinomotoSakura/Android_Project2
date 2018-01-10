@@ -6,6 +6,8 @@
     android:alpha="0.8"
     android:orientation="vertical">
 
+
+
     <ListView
         android:id="@+id/calendarWidget"
         android:layout_width="match_parent"
