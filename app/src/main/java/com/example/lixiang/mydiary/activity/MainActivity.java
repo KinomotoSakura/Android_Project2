@@ -24,7 +24,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.avos.avoscloud.AVAnalytics;
 import com.bonet.views.BtCalendarView;
@@ -78,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
         initCalenderView();
 
         AVAnalytics.trackAppOpened(getIntent());
+        Intent toWidget=new Intent("android.appwidget.action.APPWIDGET_UPDATE");
+        sendBroadcast(toWidget);
     }
 
     public void init(){
@@ -112,11 +113,11 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,0,0){
             public void onDrawerClosed(View view) {
-                invalidateOptionsMenu(); // creates call to
+                invalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
-                invalidateOptionsMenu(); // creates call to
+                invalidateOptionsMenu();
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -145,16 +146,13 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
                 popupDialog.setArguments(bundle);
                 popupDialog.setItemOnClickListener(new PopupDialogFragment.DialogItemOnClickListener() {
                     @Override
-                    public void onTop() {
-                        //置顶
+                    public void onTop() { //置顶
                         diary.setTop(1);
                         diary.setTime(System.currentTimeMillis());
                         refreshView();
                     }
-
                     @Override
-                    public void onCancel() {
-                        //取消
+                    public void onCancel() { //取消
                         diary.setTop(0);
                         diary.setTime(System.currentTimeMillis());
                         refreshView();
@@ -318,15 +316,13 @@ public class MainActivity extends AppCompatActivity implements loadDataListener 
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         ComponentName componentName = getComponentName();
 
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(componentName));
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName));
         searchView.setQueryHint(getString(R.string.search_hint));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 return true;
             }
-
             @Override
             public boolean onQueryTextChange(String s) {
                 mRVAdapter.setList(mDocument.getDiaryManager().getList());

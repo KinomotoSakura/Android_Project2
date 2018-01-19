@@ -15,7 +15,6 @@ public class Diary implements Serializable, Comparable {
      * 是否置顶
      */
     public int top;
-
     /**
      * 置顶时间
      **/
@@ -65,12 +64,6 @@ public class Diary implements Serializable, Comparable {
             return -1;
         }
         Diary otherSession = (Diary) another;
-        /**置顶判断 ArrayAdapter是按照升序从上到下排序的，就是默认的自然排序
-         * 如果是相等的情况下返回0，包括都置顶或者都不置顶，返回0的情况下要
-         * 再做判断，拿它们置顶时间进行判断
-         * 如果是不相等的情况下，otherSession是置顶的，则当前session是非置顶的，应该在otherSession下面，所以返回1
-         *  同样，session是置顶的，则当前otherSession是非置顶的，应该在otherSession上面，所以返回-1
-         * */
         int result = 0 - (top - otherSession.getTop());
         if (result == 0) {
             result = 0 - compareToTime(time, otherSession.getTime());
