@@ -84,7 +84,6 @@ public class SettingActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.preference_setting);
 
             factor = LayoutInflater.from(getActivity());
-            theme_view = factor.inflate(R.layout.theme_option, null);
             shadow = (Button)theme_view.findViewById(R.id.shadow);
             white = (Button)theme_view.findViewById(R.id.black);
             pink = (Button)theme_view.findViewById(R.id.pink);
@@ -124,6 +123,8 @@ public class SettingActivity extends AppCompatActivity {
             mTheme.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
+                    // why you have to initialize in the click function ? soooo weird.
+                    theme_view = factor.inflate(R.layout.theme_option, null);
                     AlertDialog.Builder chglog = new AlertDialog.Builder(getActivity());
                     chglog.setTitle("Themes")
                             .setView(theme_view)
